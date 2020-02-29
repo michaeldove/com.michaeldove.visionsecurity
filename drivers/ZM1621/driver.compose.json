@@ -1,0 +1,38 @@
+{
+	"id": "ZM1621",
+	"name": {
+		"en": "Battery Operated Outdoor Siren"
+	},
+	"icon": "{{driverAssetsPath}}/icon.svg",
+	"class": "other",
+	"capabilities": [
+		"onoff",
+		"measure_battery",
+		"alarm_tamper"
+	],
+	"images": {
+		"large": "{{driverAssetsPath}}/images/large.png",
+		"small": "{{driverAssetsPath}}/images/small.png"
+	},
+	"energy": {
+		"batteries" : ["OTHER"]
+	},
+	"zwave": {
+		"manufacturerId": 265,
+		"productTypeId": [
+			8197 
+		],
+		"productId": [
+			1304
+		],
+		"requireSecure":true,
+		"learnmode":{
+			"instruction":{
+				"en":"Touch magnet on bracket against reed switch then remove."
+			}
+		},
+		"associationGroups":[
+			1
+		]
+	}
+}

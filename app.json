@@ -1,0 +1,167 @@
+{
+  "id": "com.michaeldove.visionsecurity",
+  "version": "0.1.0",
+  "compatibility": ">=4.0.0",
+  "sdk": 2,
+  "name": {
+    "en": "Vision"
+  },
+  "description": {
+    "en": "Adds support for Vision devices."
+  },
+  "category": [
+    "security"
+  ],
+  "brandColor": "#E70113",
+  "permissions": [],
+  "images": {
+    "large": "/assets/images/large.png",
+    "small": "/assets/images/small.png"
+  },
+  "author": {
+    "name": "Michael Dove",
+    "email": "athom@michaeldove.com.au"
+  },
+  "drivers": [
+    {
+      "id": "ZM1621",
+      "name": {
+        "en": "Battery Operated Outdoor Siren"
+      },
+      "icon": "/drivers/ZM1621/assets/icon.svg",
+      "class": "other",
+      "capabilities": [
+        "onoff",
+        "measure_battery",
+        "alarm_tamper"
+      ],
+      "images": {
+        "large": "/drivers/ZM1621/assets/images/large.png",
+        "small": "/drivers/ZM1621/assets/images/small.png"
+      },
+      "energy": {
+        "batteries": [
+          "OTHER"
+        ]
+      },
+      "zwave": {
+        "manufacturerId": 265,
+        "productTypeId": [
+          8197
+        ],
+        "productId": [
+          1304
+        ],
+        "requireSecure": true,
+        "learnmode": {
+          "instruction": {
+            "en": "Touch magnet on bracket against reed switch then remove."
+          }
+        },
+        "associationGroups": [
+          1
+        ]
+      },
+      "settings": [
+        {
+          "id": "siren_strobe_mode",
+          "type": "dropdown",
+          "label": {
+            "en": "Siren strobe mode"
+          },
+          "value": "0",
+          "zwave": {
+            "index": 1,
+            "size": 1
+          },
+          "hint": {
+            "en": "The action of the siren once activated."
+          },
+          "values": [
+            {
+              "id": "0",
+              "label": {
+                "en": "Siren and strobe",
+                "nl": "Sirene en stroboscoop"
+              }
+            },
+            {
+              "id": "1",
+              "label": {
+                "en": "Siren only",
+                "nl": "Alleen sirene"
+              }
+            },
+            {
+              "id": "2",
+              "label": {
+                "en": "Strobe only",
+                "nl": "Alleen stroboscoop"
+              }
+            }
+          ]
+        },
+        {
+          "id": "alarm_auto_stop",
+          "type": "dropdown",
+          "label": {
+            "en": "Alarm auto stop",
+            "nl": "Automatische alarm stop"
+          },
+          "zwave": {
+            "index": 2,
+            "size": 1
+          },
+          "value": "0",
+          "values": [
+            {
+              "id": "0",
+              "label": {
+                "en": "30 seconds",
+                "nl": "30 seconden"
+              }
+            },
+            {
+              "id": "1",
+              "label": {
+                "en": "60 seconds",
+                "nl": "60 seconden"
+              }
+            },
+            {
+              "id": "2",
+              "label": {
+                "en": "120 seconds",
+                "nl": "120 seconden"
+              }
+            },
+            {
+              "id": "3",
+              "label": {
+                "en": "No automatic stop",
+                "nl": "Geen automatische stop"
+              }
+            }
+          ]
+        },
+        {
+          "id": "tamper_cancellation",
+          "type": "number",
+          "label": {
+            "en": "Tamper Alarm Cancellation",
+            "nl": "Sabotage Alarm Annulering"
+          },
+          "hint": {
+            "en": "After how many seconds will the tamper alarm be de-activated.\nRange: 0 (don't cancel), 1 - 86400 seconds",
+            "nl": "Na hoeveel seconden moet het tamper alarm worden ge-deactiveerd.\nBereik: 0 (niet annuleren), 1 - 86400 seconden"
+          },
+          "attr": {
+            "min": 0,
+            "max": 86400
+          },
+          "value": 120
+        }
+      ]
+    }
+  ]
+}
